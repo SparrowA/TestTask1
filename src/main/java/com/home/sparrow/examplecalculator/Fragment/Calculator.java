@@ -1,39 +1,18 @@
-package com.home.sparrow.examplecalculator;
+package com.home.sparrow.examplecalculator.Fragment;
 
-import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.app.Fragment;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
-public class SimpleCalculator extends Fragment implements Button.OnClickListener {
+import com.home.sparrow.examplecalculator.R;
 
-    private static SimpleCalculator mSimpleCalculator;
+/**
+ * Created by sparrow on 22.08.16.
+ */
+public class Calculator extends Fragment implements Button.OnClickListener{
 
-    public static SimpleCalculator getInstanse() {
-        if (mSimpleCalculator == null)
-            mSimpleCalculator = new SimpleCalculator();
-
-        return mSimpleCalculator;
-    }
-
-
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-    }
-
-    @Nullable
-    @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View mView = inflater.inflate(R.layout.simple_calculator, container, false);
-
-
-        return mView;
-    }
+    public TextView mCalcText;
 
     @Override
     public void onClick(View view) {
@@ -41,34 +20,49 @@ public class SimpleCalculator extends Fragment implements Button.OnClickListener
             case R.id.clear:
                 break;
             case R.id.minus:
+                mCalcText.append("-");
                 break;
             case R.id.plus:
+                mCalcText.append("+");
                 break;
             case R.id.multi:
+                mCalcText.append("*");
                 break;
             case R.id.divided:
+                mCalcText.append("/");
                 break;
             case R.id.leftBracket:
+                mCalcText.append("(");
                 break;
             case R.id.rightBracket:
+                mCalcText.append(")");
                 break;
             case R.id.one:
+                mCalcText.append("1");
                 break;
             case R.id.two:
+                mCalcText.append("2");
                 break;
             case R.id.three:
+                mCalcText.append("3");
                 break;
             case R.id.four:
+                mCalcText.append("4");
                 break;
             case R.id.five:
+                mCalcText.append("5");
                 break;
             case R.id.six:
+                mCalcText.append("6");
                 break;
             case R.id.seven:
+                mCalcText.append("7");
                 break;
             case R.id.eight:
+                mCalcText.append("8");
                 break;
             case R.id.nine:
+                mCalcText.append("9");
                 break;
         }
     }
